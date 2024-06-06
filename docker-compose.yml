@@ -1,0 +1,10 @@
+services:
+  postgres:
+    image: docker.io/postgres
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_HOST_AUTH_METHOD=trust
+      - POSTGRES_DB=next-payload-3
+    ports:
+      - '5432:5432'
+    command: -c log_statement='all' -c log_connections='true' -c log_disconnections='true'
